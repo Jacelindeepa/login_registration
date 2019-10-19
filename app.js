@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.post('/register',function(req,res){
   var formbody=req.body;
-  var jsondata = '{"name":"'+formbody.usname+'","mail":"'+formbody.mail+'","pasword":"'+formbody.psw+'","age":"'+formbody.age+'","address":"'+formbody.addr+'","phone_no":"'+formbody.ph+'"}';
+  var jsondata = '{"name":"'+formbody.usname+'","pasword":"'+formbody.psw+'","age":"'+formbody.age+'","address":"'+formbody.addr+'","phone_no":"'+formbody.ph+'"}';
   var jsonobj= JSON.parse(jsondata);
   var jsoncontent = JSON.stringify(jsonobj);
   fs.writeFile('output.json',jsoncontent,'utf8',
